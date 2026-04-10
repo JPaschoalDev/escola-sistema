@@ -8,7 +8,7 @@ package br.escola;
 // Exibição separada do menu da lógica de execução.
 // Assim o Main fica limpo e cada seção do menu é fácil de encontrar e editar.
 
-public class MenuPrincipal {
+public class PaginasMenu {
 
     // Exibe o menu principal com todas as seções disponíveis.
     // Chamado no início de cada volta do loop no Main.
