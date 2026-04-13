@@ -1,4 +1,4 @@
-package br.escola;
+package br.escola.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

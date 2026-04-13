@@ -1,6 +1,8 @@
-package br.escola;
+package br.escola.model;
 
 // Importa todas as classes de banco de dados: Connection, CallableStatement, ResultSet, etc.
+import br.escola.service.Conexao;
+
 import java.sql.*;
 // Importa o Scanner, que usamos para ler o que o usuário digita no console
 import java.util.Scanner;

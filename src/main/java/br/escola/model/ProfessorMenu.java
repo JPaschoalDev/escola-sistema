@@ -1,4 +1,4 @@
-package br.escola;
+package br.escola.model;
 
 public class ProfessorMenu {
 }

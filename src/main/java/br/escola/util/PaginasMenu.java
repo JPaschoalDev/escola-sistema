@@ -1,4 +1,4 @@
-package br.escola;
+package br.escola.util;
 
 // =========================================================================
 //                           Classe "MenuPrincipal.java"

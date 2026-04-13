@@ -1,4 +1,6 @@
-package br.escola;
+package br.escola.model;
+
+import br.escola.service.Conexao;
 
 import java.sql.*;
 

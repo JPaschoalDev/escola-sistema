@@ -1,5 +1,10 @@
 package br.escola;
 
+import br.escola.model.AlunoMenu;
+import br.escola.model.AtividadeMenu;
+import br.escola.model.GestaoMenu;
+import br.escola.util.PaginasMenu;
+
 import java.util.Scanner;
 
 public class Main {
