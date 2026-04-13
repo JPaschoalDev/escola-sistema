@@ -7,6 +7,8 @@ import br.escola.util.PaginasMenu;
 
 import java.util.Scanner;
 
+import static br.escola.model.AtividadeMenu.listarAtividades;
+
 public class Main {
     // =========================================================================
     //                               Classe Main
@@ -107,7 +109,7 @@ public class Main {
             PaginasMenu.exibirAtividades();
             opcao = sc.nextInt();
             switch (opcao) {
-                case 1 -> AtividadeMenu.listarAtividades();
+                case 1 -> listarAtividades();
                 case 2 -> System.out.println("FUNÇÃO EM CONSTRUÇÃO");
                 case 0 -> System.out.println("Voltando...");
                 default -> System.out.println("Opção inválida.");

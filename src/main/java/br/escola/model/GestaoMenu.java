@@ -19,7 +19,7 @@ public class GestaoMenu {
         String motivo = sc.nextLine();
 
 
-        String sql = "{ CALL SP_transferir_aluno(?, ?)}";
+        String sql = "{CALL SP_transferir_aluno(?, ?)}";
 
         try (Connection con = Conexao.obter();
              CallableStatement cs = con.prepareCall(sql)) {

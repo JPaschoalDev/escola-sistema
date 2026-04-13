@@ -27,31 +27,29 @@ public class AtividadeMenu {
     // Os dados são recuperados da tabela "atividades" e exibidos no console.
 
     public static void listarAtividades() throws Exception {
-        String sql = "SELECT id_matricula, a.nome, tipo, data_inicio, data_fim, observacao " +
+        String sql = "SELECT m.id AS id_matricula, al.nome, a.tipo, a.data_inicio, a.data_fim, a.observacao " +
                 "FROM atividade_extracurricular a " +
-                "JOIN aluno al ON a.nome = al.id " +
-                "JOIN matricula m ON m.id_aluno = al.id";
+                "JOIN matricula m ON m.id = a.id_matricula " +
+                "JOIN aluno al ON al.id = m.id_aluno";
 
         try (Connection conn = Conexao.obter();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                int matricula = rs.getInt("id_matricula");
-                int nome = rs.getInt("nome");
-                String tipo = rs.getString("tipo");
-                int data_inicio = rs.getInt("data_inicio");
-                String data_fim = rs.getString("data_fim");
+                int matricula     = rs.getInt("id_matricula");
+                String nome       = rs.getString("nome");        // era getInt — nome é texto
+                String tipo       = rs.getString("tipo");
+                Date data_inicio  = rs.getDate("data_inicio");   // era getInt — data_inicio é Date
+                Date data_fim     = rs.getDate("data_fim");
                 String observacao = rs.getString("observacao");
-                Date dataOcorrencia = rs.getDate("data_ocorrencia");
 
                 System.out.println("Matrícula: " + matricula);
-                System.out.println("Nome: " + nome);
-                System.out.println("Tipo: " + tipo);
-                System.out.println("Data Início: " + data_inicio);
-                System.out.println("Data Fim: " + data_fim);
-                System.out.println("Observação: " + observacao);
-                System.out.println("Data: " + dataOcorrencia);
+                System.out.println("Nome: "      + nome);
+                System.out.println("Tipo: "      + tipo);
+                System.out.println("Data Início: "+ data_inicio);
+                System.out.println("Data Fim: "  + data_fim);
+                System.out.println("Observação: "+ observacao);
                 System.out.println("-----------------------------");
             }
 
