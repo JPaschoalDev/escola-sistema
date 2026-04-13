@@ -86,7 +86,7 @@ public class ProfessorMenu {
         // Consulta na view filtrando pelo ano informado.
         // O "?" será substituído pelo valor do ano antes da execução.
         // Todo o trabalho pesado (JOINs, COUNT, GROUP BY) já está encapsulado na view do banco.
-        String sql = "SELECT professor, total_turmas, total_disciplinas " +
+        String sql = " SELECT professor "+
                 "From vw_carga_professor WHERE ano = ?";
 
         // PreparedStatement e melhor que Statement quando a query tem parametros.
