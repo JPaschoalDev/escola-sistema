@@ -57,4 +57,35 @@ public class AtividadeMenu {
             System.out.println("Erro ao listar atividades: " + e.getMessage());
         }
     }
+    // =========================================================================
+    //                         Cadastrar nova atividade
+    // =========================================================================
+    public static void cadastrarAtividade(int idMatricula, String nome , String tipo, Date dataInicio, Date dataFim, String observacao) {
+        String sql = "INSERT INTO atividade_extracurricular (id_matricula, nome, tipo, data_inicio, data_fim, observacao) VALUES (?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = Conexao.obter();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // Configura os parâmetros da query
+            pstmt.setInt(1, idMatricula);
+            pstmt.setString(2, nome);
+            pstmt.setString(3, tipo);
+            pstmt.setDate(4, dataInicio);
+            pstmt.setDate(5, dataFim);
+            pstmt.setString(6, observacao);
+
+            // Executa a inserção
+            int linhasAfetadas = pstmt.executeUpdate();
+
+            if (linhasAfetadas > 0) {
+                System.out.println("Atividade cadastrada com sucesso");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao cadastrar atividade: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Erro inesperado: " + e.getMessage());
+        }
+    }
 }
+
