@@ -31,7 +31,7 @@ public class TurmaMenu {
     }
 
     public static void verRelatorioTurma(Scanner sc) {
-        System.out.println("\nQual turma você quer ver o relatório?");
+        System.out.println("\nQual turma você quer ver o relatório? (Informe o ID da turma)");
         int idTurma = sc.nextInt();
 
         String sql = "{call sp_relatorio_turma(?)}";
